@@ -1,0 +1,62 @@
+﻿@model PagedList.IPagedList<S1G2_SISAPP.Models.Registration>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Registration";
+}
+
+<h2>Registration</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Registrations", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Course Name", "Index", new { sortOrder = ViewBag.CourseNameParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Student First Name", "Index", new { sortOrder = ViewBag.StudentFirstNameParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Term Name", "Index", new { sortOrder = ViewBag.TermNameParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cours.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.StudentFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudyTerm.TermName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.StudentID ,id1=item.CourseID, id2=item.TermID}) |
+                @Html.ActionLink("Details", "Details", new { id = item.StudentID, id1 = item.CourseID, id2 = item.TermID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.StudentID, id1 = item.CourseID, id2 = item.TermID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

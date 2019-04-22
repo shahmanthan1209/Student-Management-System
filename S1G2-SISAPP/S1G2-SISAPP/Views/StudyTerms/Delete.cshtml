@@ -1,0 +1,48 @@
+﻿@model S1G2_SISAPP.Models.StudyTerm
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StudyTerm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TermName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TermSeason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermSeason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TermDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

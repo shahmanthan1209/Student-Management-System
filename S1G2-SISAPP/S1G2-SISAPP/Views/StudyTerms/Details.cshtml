@@ -1,0 +1,42 @@
+﻿@model S1G2_SISAPP.Models.StudyTerm
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudyTerm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TermName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TermSeason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermSeason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TermDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TermID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

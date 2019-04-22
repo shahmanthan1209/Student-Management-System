@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Entities-Web.config Connection String" description="Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.S1G2-Model.csdl|res://*/Models.S1G2-Model.ssdl|res://*/Models.S1G2-Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-K5UE7TJ;initial catalog=S1G2-SISDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\thesi\\source\\repos\\S1G2-SISAPP\\S1G2-SISAPP\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Entities']/@connectionString" />
+  </parameter>
+  <parameter name="Entities1-Web.config Connection String" description="Entities1 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.S1G2-SISModel.csdl|res://*/Models.S1G2-SISModel.ssdl|res://*/Models.S1G2-SISModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-K5UE7TJ;initial catalog=S1G2-SISDB;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\thesi\\source\\repos\\S1G2-SISAPP\\S1G2-SISAPP\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Entities1']/@connectionString" />
+  </parameter>
+</parameters>

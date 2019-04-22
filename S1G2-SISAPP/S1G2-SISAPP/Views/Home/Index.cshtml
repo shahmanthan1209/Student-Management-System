@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Student Information System (SIS)</h1>
+    <p class="lead">SIS is MVC .Net Web Application to manage the information of Students and faculty members.</p>
+    <p><a href="#" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Students", "Index", "Students")</h2>
+        <p>
+            Information related to Students
+        </p>
+        <!--<p><a class="btn btn-default" href="@Url.Action("Students", "Index", "Students")"> More &raquo;</a></p>-->
+    </div>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Instructors", "Index", "Instructors")</h2>
+        <p>Information related to Instructors</p>
+        <!--<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>-->
+    </div>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Departments", "Index", "Departments")</h2>
+        <p>Information related to Departments</p>
+        <!--<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>-->
+    </div>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Courses", "Index", "Courses")</h2>
+        <p>Information related to Courses</p>
+        <!-- <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>-->
+    </div>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Study Terms", "Index", "StudyTerms")</h2>
+        <p>Information related to StudyTerms</p>
+        <!--<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>-->
+    </div>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Teaching Assignments", "Index", "TeachingAssignments")</h2>
+        <p>Information related to TeachingAssignments</p>
+        <!-- <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>-->
+    </div>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Course Registrations", "Index", "Registrations")</h2>
+        <p>Information related to Registrations</p>
+        <!-- <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>-->
+    </div>
+</div>

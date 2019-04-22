@@ -1,0 +1,61 @@
+﻿@model PagedList.IPagedList<S1G2_SISAPP.Models.StudyTerm>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "StudyTerm";
+}
+
+<h2>StudyTerms</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "StudyTerms", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Term Name", "Index", new { sortOrder = ViewBag.TermNameParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Term Season", "Index", new { sortOrder = ViewBag.TermSeasonParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Term Description", "Index", new { sortOrder = ViewBag.TermDescriptionParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TermName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TermSeason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TermDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TermID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TermID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TermID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
